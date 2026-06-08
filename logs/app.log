@@ -1,0 +1,324 @@
+2026-06-08 18:21:18 | INFO     | train | ╔══════════════════════════════════════════════════════╗
+2026-06-08 18:21:18 | INFO     | train | ║   Breast Cancer ML — Production Training Pipeline    ║
+2026-06-08 18:21:18 | INFO     | train | ╚══════════════════════════════════════════════════════╝
+2026-06-08 18:21:18 | INFO     | src.data.loader | Loading data  source=sklearn
+2026-06-08 18:21:18 | DEBUG    | src.data.loader | Loaded dataset from sklearn  (569 samples, 30 features)
+2026-06-08 18:21:18 | DEBUG    | src.data.loader | Data validation passed ✔
+2026-06-08 18:21:19 | INFO     | src.data.loader | Data loaded   Samples=569  Features=30  Benign=357  Malignant=212
+2026-06-08 18:21:19 | INFO     | src.data.splitter | Split  train=398  test=171  test_ratio=0.30  stratified=True
+2026-06-08 18:21:19 | INFO     | src.models.trainer | ============================================================
+2026-06-08 18:21:19 | INFO     | src.models.trainer |   Starting model training …
+2026-06-08 18:21:19 | INFO     | src.models.trainer | ============================================================
+2026-06-08 18:21:19 | INFO     | src.models.trainer |   Training  Random Forest …
+2026-06-08 18:21:19 | INFO     | src.models.trainer |   ✔ Random Forest trained
+2026-06-08 18:21:19 | INFO     | src.models.trainer |   Training  kNN …
+2026-06-08 18:21:19 | INFO     | src.models.trainer |   ✔ kNN trained
+2026-06-08 18:21:19 | INFO     | src.models.trainer |   Training  Naive Bayes …
+2026-06-08 18:21:19 | INFO     | src.models.trainer |   ✔ Naive Bayes trained
+2026-06-08 18:21:19 | INFO     | src.models.trainer |   Training  SVM …
+2026-06-08 18:21:19 | INFO     | src.models.trainer |   ✔ SVM trained
+2026-06-08 18:21:19 | INFO     | src.models.trainer |   Training  Logistic Regression …
+2026-06-08 18:21:19 | INFO     | src.models.trainer |   ✔ Logistic Regression trained
+2026-06-08 18:21:19 | INFO     | src.models.trainer |   Training  Ensemble (Soft Voting) …
+2026-06-08 18:21:19 | INFO     | src.models.trainer |   ✔ Ensemble (Soft Voting) trained
+2026-06-08 18:21:19 | INFO     | src.models.trainer | Training complete — 6 models ready.
+2026-06-08 18:21:19 | INFO     | src.models.evaluator | ============================================================
+2026-06-08 18:21:19 | INFO     | src.models.evaluator |   Evaluating 6 models  (CV folds=10)
+2026-06-08 18:21:19 | INFO     | src.models.evaluator | ============================================================
+2026-06-08 18:21:19 | INFO     | src.models.evaluator |   Evaluating  Random Forest …
+2026-06-08 18:21:20 | INFO     | src.models.evaluator |   ✔ Random Forest                  Acc=0.9474  Prec=0.9455  Rec=0.9720  F1=0.9585  AUC=0.9927  CV=0.9672±0.0281
+2026-06-08 18:21:20 | INFO     | src.models.evaluator |   Evaluating  kNN …
+2026-06-08 18:21:22 | INFO     | src.models.evaluator |   ✔ kNN                            Acc=0.9591  Prec=0.9386  Rec=1.0000  F1=0.9683  AUC=0.9827  CV=0.9673±0.0278
+2026-06-08 18:21:22 | INFO     | src.models.evaluator |   Evaluating  Naive Bayes …
+2026-06-08 18:21:22 | INFO     | src.models.evaluator |   ✔ Naive Bayes                    Acc=0.9357  Prec=0.9364  Rec=0.9626  F1=0.9493  AUC=0.9892  CV=0.9321±0.0341
+2026-06-08 18:21:22 | INFO     | src.models.evaluator |   Evaluating  SVM …
+2026-06-08 18:21:22 | INFO     | src.models.evaluator |   ✔ SVM                            Acc=0.9766  Prec=0.9813  Rec=0.9813  F1=0.9813  AUC=0.9978  CV=0.9672±0.0254
+2026-06-08 18:21:22 | INFO     | src.models.evaluator |   Evaluating  Logistic Regression …
+2026-06-08 18:21:22 | INFO     | src.models.evaluator |   ✔ Logistic Regression            Acc=0.9708  Prec=0.9904  Rec=0.9626  F1=0.9763  AUC=0.9981  CV=0.9697±0.0247
+2026-06-08 18:21:22 | INFO     | src.models.evaluator |   Evaluating  Ensemble (Soft Voting) …
+2026-06-08 18:21:23 | INFO     | src.models.evaluator |   ✔ Ensemble (Soft Voting)         Acc=0.9591  Prec=0.9464  Rec=0.9907  F1=0.9680  AUC=0.9965  CV=0.9673±0.0300
+2026-06-08 18:21:23 | INFO     | src.models.evaluator | ────────────────────────────────────────────────────────────
+2026-06-08 18:21:23 | INFO     | src.models.evaluator |   🏆 Best Accuracy : SVM  (0.9766)
+2026-06-08 18:21:23 | INFO     | src.models.evaluator |   🎯 Best Recall   : kNN  (1.0000)
+2026-06-08 18:21:23 | INFO     | src.models.evaluator | ────────────────────────────────────────────────────────────
+2026-06-08 18:21:23 | INFO     | train | 
+                        accuracy  precision  recall  f1_score  auc_roc
+model_name                                                            
+kNN                       0.9591     0.9386  1.0000    0.9683   0.9827
+Ensemble (Soft Voting)    0.9591     0.9464  0.9907    0.9680   0.9965
+SVM                       0.9766     0.9813  0.9813    0.9813   0.9978
+Random Forest             0.9474     0.9455  0.9720    0.9585   0.9927
+Naive Bayes               0.9357     0.9364  0.9626    0.9493   0.9892
+Logistic Regression       0.9708     0.9904  0.9626    0.9763   0.9981
+2026-06-08 18:21:23 | INFO     | src.models.registry | Saving 6 models → models\saved
+2026-06-08 18:21:23 | INFO     | src.models.registry |   ✔ random_forest.pkl                              56.8 KB
+2026-06-08 18:21:23 | INFO     | src.models.registry |   ✔ knn.pkl                                        89.5 KB
+2026-06-08 18:21:23 | INFO     | src.models.registry |   ✔ naive_bayes.pkl                                2.7 KB
+2026-06-08 18:21:23 | INFO     | src.models.registry |   ✔ svm.pkl                                        23.4 KB
+2026-06-08 18:21:23 | INFO     | src.models.registry |   ✔ logistic_regression.pkl                        2.1 KB
+2026-06-08 18:21:23 | INFO     | src.models.registry |   ✔ ensemble_soft_voting.pkl                       334.5 KB
+2026-06-08 18:21:23 | INFO     | src.models.registry |   ✔ manifest.json written
+2026-06-08 18:21:24 | WARNING  | train | matplotlib/seaborn not installed — skipping plots
+2026-06-08 18:21:24 | INFO     | train | ╔══════════════════════════════════════════════════════╗
+2026-06-08 18:21:24 | INFO     | train | ║  🏆 Best Recall  → kNN                               ║
+2026-06-08 18:21:24 | INFO     | train | ║     Recall = 1.0000   Accuracy = 0.9591                      ║
+2026-06-08 18:21:24 | INFO     | train | ╚══════════════════════════════════════════════════════╝
+2026-06-08 18:21:24 | INFO     | train | Training complete.  Start the API with:
+2026-06-08 18:21:24 | INFO     | train |   uvicorn src.api.main:app --reload --port 8000
+2026-06-08 18:24:30 | INFO     | src.data.loader | Loading data  source=sklearn
+2026-06-08 18:24:30 | DEBUG    | src.data.loader | Loaded dataset from sklearn  (569 samples, 30 features)
+2026-06-08 18:24:30 | DEBUG    | src.data.loader | Data validation passed ✔
+2026-06-08 18:24:30 | INFO     | src.data.loader | Data loaded   Samples=569  Features=30  Benign=357  Malignant=212
+2026-06-08 18:24:30 | INFO     | src.data.loader | Loading data  source=sklearn
+2026-06-08 18:24:30 | DEBUG    | src.data.loader | Loaded dataset from sklearn  (569 samples, 30 features)
+2026-06-08 18:24:30 | DEBUG    | src.data.loader | Data validation passed ✔
+2026-06-08 18:24:30 | INFO     | src.data.loader | Data loaded   Samples=569  Features=30  Benign=357  Malignant=212
+2026-06-08 18:24:30 | INFO     | src.data.loader | Loading data  source=sklearn
+2026-06-08 18:24:30 | DEBUG    | src.data.loader | Loaded dataset from sklearn  (569 samples, 30 features)
+2026-06-08 18:24:30 | DEBUG    | src.data.loader | Data validation passed ✔
+2026-06-08 18:24:30 | INFO     | src.data.loader | Data loaded   Samples=569  Features=30  Benign=357  Malignant=212
+2026-06-08 18:24:30 | INFO     | src.data.loader | Loading data  source=unknown
+2026-06-08 18:24:30 | INFO     | src.data.loader | Loading data  source=csv
+2026-06-08 18:24:30 | INFO     | src.data.loader | Loading data  source=sklearn
+2026-06-08 18:24:30 | DEBUG    | src.data.loader | Loaded dataset from sklearn  (569 samples, 30 features)
+2026-06-08 18:24:30 | DEBUG    | src.data.loader | Data validation passed ✔
+2026-06-08 18:24:30 | INFO     | src.data.loader | Data loaded   Samples=569  Features=30  Benign=357  Malignant=212
+2026-06-08 18:24:30 | INFO     | src.data.splitter | Split  train=398  test=171  test_ratio=0.30  stratified=True
+2026-06-08 18:24:30 | INFO     | src.data.loader | Loading data  source=sklearn
+2026-06-08 18:24:30 | DEBUG    | src.data.loader | Loaded dataset from sklearn  (569 samples, 30 features)
+2026-06-08 18:24:30 | DEBUG    | src.data.loader | Data validation passed ✔
+2026-06-08 18:24:30 | INFO     | src.data.loader | Data loaded   Samples=569  Features=30  Benign=357  Malignant=212
+2026-06-08 18:24:30 | INFO     | src.data.splitter | Split  train=398  test=171  test_ratio=0.30  stratified=True
+2026-06-08 18:24:30 | INFO     | src.data.loader | Loading data  source=sklearn
+2026-06-08 18:24:30 | DEBUG    | src.data.loader | Loaded dataset from sklearn  (569 samples, 30 features)
+2026-06-08 18:24:30 | DEBUG    | src.data.loader | Data validation passed ✔
+2026-06-08 18:24:30 | INFO     | src.data.loader | Data loaded   Samples=569  Features=30  Benign=357  Malignant=212
+2026-06-08 18:24:30 | INFO     | src.data.splitter | Split  train=398  test=171  test_ratio=0.30  stratified=True
+2026-06-08 18:24:30 | INFO     | src.data.splitter | Split  train=398  test=171  test_ratio=0.30  stratified=True
+2026-06-08 18:24:30 | INFO     | src.data.loader | Loading data  source=sklearn
+2026-06-08 18:24:30 | DEBUG    | src.data.loader | Loaded dataset from sklearn  (569 samples, 30 features)
+2026-06-08 18:24:30 | DEBUG    | src.data.loader | Data validation passed ✔
+2026-06-08 18:24:30 | INFO     | src.data.loader | Data loaded   Samples=569  Features=30  Benign=357  Malignant=212
+2026-06-08 18:24:30 | DEBUG    | src.features.preprocessor | Preprocessor fitted on 569 samples, 30 features
+2026-06-08 18:24:30 | DEBUG    | src.features.preprocessor | Preprocessor fitted on 569 samples, 30 features
+2026-06-08 18:24:30 | DEBUG    | src.features.preprocessor | Preprocessor fitted on 569 samples, 30 features
+2026-06-08 18:24:30 | DEBUG    | src.features.preprocessor | Preprocessor fitted on 569 samples, 30 features
+2026-06-08 18:27:29 | INFO     | src.data.loader | Loading data  source=sklearn
+2026-06-08 18:27:29 | DEBUG    | src.data.loader | Loaded dataset from sklearn  (569 samples, 30 features)
+2026-06-08 18:27:29 | DEBUG    | src.data.loader | Data validation passed ✔
+2026-06-08 18:27:29 | INFO     | src.data.loader | Data loaded   Samples=569  Features=30  Benign=357  Malignant=212
+2026-06-08 18:27:29 | INFO     | src.data.loader | Loading data  source=sklearn
+2026-06-08 18:27:29 | DEBUG    | src.data.loader | Loaded dataset from sklearn  (569 samples, 30 features)
+2026-06-08 18:27:29 | DEBUG    | src.data.loader | Data validation passed ✔
+2026-06-08 18:27:29 | INFO     | src.data.loader | Data loaded   Samples=569  Features=30  Benign=357  Malignant=212
+2026-06-08 18:27:29 | INFO     | src.data.loader | Loading data  source=sklearn
+2026-06-08 18:27:29 | DEBUG    | src.data.loader | Loaded dataset from sklearn  (569 samples, 30 features)
+2026-06-08 18:27:29 | DEBUG    | src.data.loader | Data validation passed ✔
+2026-06-08 18:27:29 | INFO     | src.data.loader | Data loaded   Samples=569  Features=30  Benign=357  Malignant=212
+2026-06-08 18:27:29 | INFO     | src.data.loader | Loading data  source=unknown
+2026-06-08 18:27:29 | INFO     | src.data.loader | Loading data  source=csv
+2026-06-08 18:27:29 | INFO     | src.data.loader | Loading data  source=sklearn
+2026-06-08 18:27:29 | DEBUG    | src.data.loader | Loaded dataset from sklearn  (569 samples, 30 features)
+2026-06-08 18:27:29 | DEBUG    | src.data.loader | Data validation passed ✔
+2026-06-08 18:27:29 | INFO     | src.data.loader | Data loaded   Samples=569  Features=30  Benign=357  Malignant=212
+2026-06-08 18:27:29 | INFO     | src.data.splitter | Split  train=398  test=171  test_ratio=0.30  stratified=True
+2026-06-08 18:27:29 | INFO     | src.data.loader | Loading data  source=sklearn
+2026-06-08 18:27:29 | DEBUG    | src.data.loader | Loaded dataset from sklearn  (569 samples, 30 features)
+2026-06-08 18:27:29 | DEBUG    | src.data.loader | Data validation passed ✔
+2026-06-08 18:27:29 | INFO     | src.data.loader | Data loaded   Samples=569  Features=30  Benign=357  Malignant=212
+2026-06-08 18:27:29 | INFO     | src.data.splitter | Split  train=398  test=171  test_ratio=0.30  stratified=True
+2026-06-08 18:27:29 | INFO     | src.data.loader | Loading data  source=sklearn
+2026-06-08 18:27:29 | DEBUG    | src.data.loader | Loaded dataset from sklearn  (569 samples, 30 features)
+2026-06-08 18:27:29 | DEBUG    | src.data.loader | Data validation passed ✔
+2026-06-08 18:27:29 | INFO     | src.data.loader | Data loaded   Samples=569  Features=30  Benign=357  Malignant=212
+2026-06-08 18:27:29 | INFO     | src.data.splitter | Split  train=398  test=171  test_ratio=0.30  stratified=True
+2026-06-08 18:27:29 | INFO     | src.data.splitter | Split  train=398  test=171  test_ratio=0.30  stratified=True
+2026-06-08 18:27:29 | INFO     | src.data.loader | Loading data  source=sklearn
+2026-06-08 18:27:29 | DEBUG    | src.data.loader | Loaded dataset from sklearn  (569 samples, 30 features)
+2026-06-08 18:27:29 | DEBUG    | src.data.loader | Data validation passed ✔
+2026-06-08 18:27:29 | INFO     | src.data.loader | Data loaded   Samples=569  Features=30  Benign=357  Malignant=212
+2026-06-08 18:27:29 | DEBUG    | src.features.preprocessor | Preprocessor fitted on 569 samples, 30 features
+2026-06-08 18:27:29 | DEBUG    | src.features.preprocessor | Preprocessor fitted on 569 samples, 30 features
+2026-06-08 18:27:29 | DEBUG    | src.features.preprocessor | Preprocessor fitted on 569 samples, 30 features
+2026-06-08 18:27:29 | DEBUG    | src.features.preprocessor | Preprocessor fitted on 569 samples, 30 features
+2026-06-08 18:27:29 | INFO     | src.data.loader | Loading data  source=sklearn
+2026-06-08 18:27:29 | DEBUG    | src.data.loader | Loaded dataset from sklearn  (569 samples, 30 features)
+2026-06-08 18:27:29 | DEBUG    | src.data.loader | Data validation passed ✔
+2026-06-08 18:27:29 | INFO     | src.data.loader | Data loaded   Samples=569  Features=30  Benign=357  Malignant=212
+2026-06-08 18:27:29 | INFO     | src.data.splitter | Split  train=398  test=171  test_ratio=0.30  stratified=True
+2026-06-08 18:27:29 | INFO     | src.models.trainer | ============================================================
+2026-06-08 18:27:29 | INFO     | src.models.trainer |   Starting model training …
+2026-06-08 18:27:29 | INFO     | src.models.trainer | ============================================================
+2026-06-08 18:27:29 | INFO     | src.models.trainer |   Training  Random Forest …
+2026-06-08 18:27:30 | INFO     | src.models.trainer |   ✔ Random Forest trained
+2026-06-08 18:27:30 | INFO     | src.models.trainer |   Training  kNN …
+2026-06-08 18:27:30 | INFO     | src.models.trainer |   ✔ kNN trained
+2026-06-08 18:27:30 | INFO     | src.models.trainer |   Training  Naive Bayes …
+2026-06-08 18:27:30 | INFO     | src.models.trainer |   ✔ Naive Bayes trained
+2026-06-08 18:27:30 | INFO     | src.models.trainer |   Training  SVM …
+2026-06-08 18:27:30 | INFO     | src.models.trainer |   ✔ SVM trained
+2026-06-08 18:27:30 | INFO     | src.models.trainer |   Training  Logistic Regression …
+2026-06-08 18:27:30 | INFO     | src.models.trainer |   ✔ Logistic Regression trained
+2026-06-08 18:27:30 | INFO     | src.models.trainer |   Training  Ensemble (Soft Voting) …
+2026-06-08 18:27:30 | INFO     | src.models.trainer |   ✔ Ensemble (Soft Voting) trained
+2026-06-08 18:27:30 | INFO     | src.models.trainer | Training complete — 6 models ready.
+2026-06-08 18:27:31 | INFO     | src.models.evaluator | ============================================================
+2026-06-08 18:27:31 | INFO     | src.models.evaluator |   Evaluating 6 models  (CV folds=3)
+2026-06-08 18:27:31 | INFO     | src.models.evaluator | ============================================================
+2026-06-08 18:27:31 | INFO     | src.models.evaluator |   Evaluating  Random Forest …
+2026-06-08 18:27:31 | INFO     | src.models.evaluator |   ✔ Random Forest                  Acc=0.9474  Prec=0.9455  Rec=0.9720  F1=0.9585  AUC=0.9927  CV=0.9573±0.0177
+2026-06-08 18:27:31 | INFO     | src.models.evaluator |   Evaluating  kNN …
+2026-06-08 18:27:31 | INFO     | src.models.evaluator |   ✔ kNN                            Acc=0.9591  Prec=0.9386  Rec=1.0000  F1=0.9683  AUC=0.9827  CV=0.9673±0.0072
+2026-06-08 18:27:31 | INFO     | src.models.evaluator |   Evaluating  Naive Bayes …
+2026-06-08 18:27:31 | INFO     | src.models.evaluator |   ✔ Naive Bayes                    Acc=0.9357  Prec=0.9364  Rec=0.9626  F1=0.9493  AUC=0.9892  CV=0.9347±0.0037
+2026-06-08 18:27:31 | INFO     | src.models.evaluator |   Evaluating  SVM …
+2026-06-08 18:27:31 | INFO     | src.models.evaluator |   ✔ SVM                            Acc=0.9766  Prec=0.9813  Rec=0.9813  F1=0.9813  AUC=0.9978  CV=0.9724±0.0036
+2026-06-08 18:27:31 | INFO     | src.models.evaluator |   Evaluating  Logistic Regression …
+2026-06-08 18:27:32 | INFO     | src.models.evaluator |   ✔ Logistic Regression            Acc=0.9708  Prec=0.9904  Rec=0.9626  F1=0.9763  AUC=0.9981  CV=0.9774±0.0061
+2026-06-08 18:27:32 | INFO     | src.models.evaluator |   Evaluating  Ensemble (Soft Voting) …
+2026-06-08 18:27:32 | INFO     | src.models.evaluator |   ✔ Ensemble (Soft Voting)         Acc=0.9591  Prec=0.9464  Rec=0.9907  F1=0.9680  AUC=0.9965  CV=0.9648±0.0094
+2026-06-08 18:27:32 | INFO     | src.models.evaluator | ────────────────────────────────────────────────────────────
+2026-06-08 18:27:32 | INFO     | src.models.evaluator |   🏆 Best Accuracy : SVM  (0.9766)
+2026-06-08 18:27:32 | INFO     | src.models.evaluator |   🎯 Best Recall   : kNN  (1.0000)
+2026-06-08 18:27:32 | INFO     | src.models.evaluator | ────────────────────────────────────────────────────────────
+2026-06-08 18:27:32 | INFO     | src.models.evaluator | ============================================================
+2026-06-08 18:27:32 | INFO     | src.models.evaluator |   Evaluating 6 models  (CV folds=3)
+2026-06-08 18:27:32 | INFO     | src.models.evaluator | ============================================================
+2026-06-08 18:27:32 | INFO     | src.models.evaluator |   Evaluating  Random Forest …
+2026-06-08 18:27:32 | INFO     | src.models.evaluator |   ✔ Random Forest                  Acc=0.9474  Prec=0.9455  Rec=0.9720  F1=0.9585  AUC=0.9927  CV=0.9573±0.0177
+2026-06-08 18:27:32 | INFO     | src.models.evaluator |   Evaluating  kNN …
+2026-06-08 18:27:32 | INFO     | src.models.evaluator |   ✔ kNN                            Acc=0.9591  Prec=0.9386  Rec=1.0000  F1=0.9683  AUC=0.9827  CV=0.9673±0.0072
+2026-06-08 18:27:32 | INFO     | src.models.evaluator |   Evaluating  Naive Bayes …
+2026-06-08 18:27:32 | INFO     | src.models.evaluator |   ✔ Naive Bayes                    Acc=0.9357  Prec=0.9364  Rec=0.9626  F1=0.9493  AUC=0.9892  CV=0.9347±0.0037
+2026-06-08 18:27:32 | INFO     | src.models.evaluator |   Evaluating  SVM …
+2026-06-08 18:27:32 | INFO     | src.models.evaluator |   ✔ SVM                            Acc=0.9766  Prec=0.9813  Rec=0.9813  F1=0.9813  AUC=0.9978  CV=0.9724±0.0036
+2026-06-08 18:27:32 | INFO     | src.models.evaluator |   Evaluating  Logistic Regression …
+2026-06-08 18:27:32 | INFO     | src.models.evaluator |   ✔ Logistic Regression            Acc=0.9708  Prec=0.9904  Rec=0.9626  F1=0.9763  AUC=0.9981  CV=0.9774±0.0061
+2026-06-08 18:27:32 | INFO     | src.models.evaluator |   Evaluating  Ensemble (Soft Voting) …
+2026-06-08 18:27:33 | INFO     | src.models.evaluator |   ✔ Ensemble (Soft Voting)         Acc=0.9591  Prec=0.9464  Rec=0.9907  F1=0.9680  AUC=0.9965  CV=0.9648±0.0094
+2026-06-08 18:27:33 | INFO     | src.models.evaluator | ────────────────────────────────────────────────────────────
+2026-06-08 18:27:33 | INFO     | src.models.evaluator |   🏆 Best Accuracy : SVM  (0.9766)
+2026-06-08 18:27:33 | INFO     | src.models.evaluator |   🎯 Best Recall   : kNN  (1.0000)
+2026-06-08 18:27:33 | INFO     | src.models.evaluator | ────────────────────────────────────────────────────────────
+2026-06-08 18:27:33 | INFO     | src.models.evaluator | ============================================================
+2026-06-08 18:27:33 | INFO     | src.models.evaluator |   Evaluating 6 models  (CV folds=3)
+2026-06-08 18:27:33 | INFO     | src.models.evaluator | ============================================================
+2026-06-08 18:27:33 | INFO     | src.models.evaluator |   Evaluating  Random Forest …
+2026-06-08 18:27:33 | INFO     | src.models.evaluator |   ✔ Random Forest                  Acc=0.9474  Prec=0.9455  Rec=0.9720  F1=0.9585  AUC=0.9927  CV=0.9573±0.0177
+2026-06-08 18:27:33 | INFO     | src.models.evaluator |   Evaluating  kNN …
+2026-06-08 18:27:33 | INFO     | src.models.evaluator |   ✔ kNN                            Acc=0.9591  Prec=0.9386  Rec=1.0000  F1=0.9683  AUC=0.9827  CV=0.9673±0.0072
+2026-06-08 18:27:33 | INFO     | src.models.evaluator |   Evaluating  Naive Bayes …
+2026-06-08 18:27:33 | INFO     | src.models.evaluator |   ✔ Naive Bayes                    Acc=0.9357  Prec=0.9364  Rec=0.9626  F1=0.9493  AUC=0.9892  CV=0.9347±0.0037
+2026-06-08 18:27:33 | INFO     | src.models.evaluator |   Evaluating  SVM …
+2026-06-08 18:27:33 | INFO     | src.models.evaluator |   ✔ SVM                            Acc=0.9766  Prec=0.9813  Rec=0.9813  F1=0.9813  AUC=0.9978  CV=0.9724±0.0036
+2026-06-08 18:27:33 | INFO     | src.models.evaluator |   Evaluating  Logistic Regression …
+2026-06-08 18:27:33 | INFO     | src.models.evaluator |   ✔ Logistic Regression            Acc=0.9708  Prec=0.9904  Rec=0.9626  F1=0.9763  AUC=0.9981  CV=0.9774±0.0061
+2026-06-08 18:27:33 | INFO     | src.models.evaluator |   Evaluating  Ensemble (Soft Voting) …
+2026-06-08 18:27:34 | INFO     | src.models.evaluator |   ✔ Ensemble (Soft Voting)         Acc=0.9591  Prec=0.9464  Rec=0.9907  F1=0.9680  AUC=0.9965  CV=0.9648±0.0094
+2026-06-08 18:27:34 | INFO     | src.models.evaluator | ────────────────────────────────────────────────────────────
+2026-06-08 18:27:34 | INFO     | src.models.evaluator |   🏆 Best Accuracy : SVM  (0.9766)
+2026-06-08 18:27:34 | INFO     | src.models.evaluator |   🎯 Best Recall   : kNN  (1.0000)
+2026-06-08 18:27:34 | INFO     | src.models.evaluator | ────────────────────────────────────────────────────────────
+2026-06-08 18:27:34 | INFO     | src.models.evaluator | ============================================================
+2026-06-08 18:27:34 | INFO     | src.models.evaluator |   Evaluating 6 models  (CV folds=3)
+2026-06-08 18:27:34 | INFO     | src.models.evaluator | ============================================================
+2026-06-08 18:27:34 | INFO     | src.models.evaluator |   Evaluating  Random Forest …
+2026-06-08 18:27:34 | INFO     | src.models.evaluator |   ✔ Random Forest                  Acc=0.9474  Prec=0.9455  Rec=0.9720  F1=0.9585  AUC=0.9927  CV=0.9573±0.0177
+2026-06-08 18:27:34 | INFO     | src.models.evaluator |   Evaluating  kNN …
+2026-06-08 18:27:34 | INFO     | src.models.evaluator |   ✔ kNN                            Acc=0.9591  Prec=0.9386  Rec=1.0000  F1=0.9683  AUC=0.9827  CV=0.9673±0.0072
+2026-06-08 18:27:34 | INFO     | src.models.evaluator |   Evaluating  Naive Bayes …
+2026-06-08 18:27:34 | INFO     | src.models.evaluator |   ✔ Naive Bayes                    Acc=0.9357  Prec=0.9364  Rec=0.9626  F1=0.9493  AUC=0.9892  CV=0.9347±0.0037
+2026-06-08 18:27:34 | INFO     | src.models.evaluator |   Evaluating  SVM …
+2026-06-08 18:27:34 | INFO     | src.models.evaluator |   ✔ SVM                            Acc=0.9766  Prec=0.9813  Rec=0.9813  F1=0.9813  AUC=0.9978  CV=0.9724±0.0036
+2026-06-08 18:27:34 | INFO     | src.models.evaluator |   Evaluating  Logistic Regression …
+2026-06-08 18:27:34 | INFO     | src.models.evaluator |   ✔ Logistic Regression            Acc=0.9708  Prec=0.9904  Rec=0.9626  F1=0.9763  AUC=0.9981  CV=0.9774±0.0061
+2026-06-08 18:27:34 | INFO     | src.models.evaluator |   Evaluating  Ensemble (Soft Voting) …
+2026-06-08 18:27:34 | INFO     | src.models.evaluator |   ✔ Ensemble (Soft Voting)         Acc=0.9591  Prec=0.9464  Rec=0.9907  F1=0.9680  AUC=0.9965  CV=0.9648±0.0094
+2026-06-08 18:27:34 | INFO     | src.models.evaluator | ────────────────────────────────────────────────────────────
+2026-06-08 18:27:34 | INFO     | src.models.evaluator |   🏆 Best Accuracy : SVM  (0.9766)
+2026-06-08 18:27:34 | INFO     | src.models.evaluator |   🎯 Best Recall   : kNN  (1.0000)
+2026-06-08 18:27:34 | INFO     | src.models.evaluator | ────────────────────────────────────────────────────────────
+2026-06-08 18:32:50 | INFO     | src.models.registry | Model loaded ← ensemble_soft_voting.pkl
+2026-06-08 18:32:51 | INFO     | src.api.routes | Predict → Malignant  conf=0.990  model=ensemble_soft_voting
+2026-06-08 18:32:51 | INFO     | src.models.registry | Model loaded ← ensemble_soft_voting.pkl
+2026-06-08 18:32:51 | INFO     | src.api.routes | Predict → Malignant  conf=0.990  model=ensemble_soft_voting
+2026-06-08 18:32:51 | INFO     | src.models.registry | Model loaded ← ensemble_soft_voting.pkl
+2026-06-08 18:32:51 | INFO     | src.api.routes | Predict → Malignant  conf=0.990  model=ensemble_soft_voting
+2026-06-08 18:32:51 | INFO     | src.models.registry | Model loaded ← ensemble_soft_voting.pkl
+2026-06-08 18:32:51 | INFO     | src.api.routes | Batch predict → 10 rows  model=ensemble_soft_voting
+2026-06-08 18:32:51 | INFO     | src.models.registry | Model loaded ← ensemble_soft_voting.pkl
+2026-06-08 18:32:51 | INFO     | src.api.routes | Batch predict → 7 rows  model=ensemble_soft_voting
+2026-06-08 18:34:41 | INFO     | train | ╔══════════════════════════════════════════════════════╗
+2026-06-08 18:34:41 | INFO     | train | ║   Breast Cancer ML — Production Training Pipeline    ║
+2026-06-08 18:34:41 | INFO     | train | ╚══════════════════════════════════════════════════════╝
+2026-06-08 18:34:41 | INFO     | src.data.loader | Loading data  source=sklearn
+2026-06-08 18:34:41 | DEBUG    | src.data.loader | Loaded dataset from sklearn  (569 samples, 30 features)
+2026-06-08 18:34:41 | DEBUG    | src.data.loader | Data validation passed ✔
+2026-06-08 18:34:41 | INFO     | src.data.loader | Data loaded   Samples=569  Features=30  Benign=357  Malignant=212
+2026-06-08 18:34:41 | INFO     | src.data.splitter | Split  train=398  test=171  test_ratio=0.30  stratified=True
+2026-06-08 18:34:41 | INFO     | src.models.trainer | ============================================================
+2026-06-08 18:34:41 | INFO     | src.models.trainer |   Starting model training …
+2026-06-08 18:34:41 | INFO     | src.models.trainer | ============================================================
+2026-06-08 18:34:41 | INFO     | src.models.trainer |   Training  Random Forest …
+2026-06-08 18:34:41 | INFO     | src.models.trainer |   ✔ Random Forest trained
+2026-06-08 18:34:41 | INFO     | src.models.trainer |   Training  kNN …
+2026-06-08 18:34:41 | INFO     | src.models.trainer |   ✔ kNN trained
+2026-06-08 18:34:41 | INFO     | src.models.trainer |   Training  Naive Bayes …
+2026-06-08 18:34:41 | INFO     | src.models.trainer |   ✔ Naive Bayes trained
+2026-06-08 18:34:41 | INFO     | src.models.trainer |   Training  SVM …
+2026-06-08 18:34:41 | INFO     | src.models.trainer |   ✔ SVM trained
+2026-06-08 18:34:41 | INFO     | src.models.trainer |   Training  Logistic Regression …
+2026-06-08 18:34:41 | INFO     | src.models.trainer |   ✔ Logistic Regression trained
+2026-06-08 18:34:41 | INFO     | src.models.trainer |   Training  Ensemble (Soft Voting) …
+2026-06-08 18:34:41 | INFO     | src.models.trainer |   ✔ Ensemble (Soft Voting) trained
+2026-06-08 18:34:41 | INFO     | src.models.trainer | Training complete — 6 models ready.
+2026-06-08 18:34:41 | INFO     | src.models.evaluator | ============================================================
+2026-06-08 18:34:41 | INFO     | src.models.evaluator |   Evaluating 6 models  (CV folds=10)
+2026-06-08 18:34:41 | INFO     | src.models.evaluator | ============================================================
+2026-06-08 18:34:41 | INFO     | src.models.evaluator |   Evaluating  Random Forest …
+2026-06-08 18:34:42 | INFO     | src.models.evaluator |   ✔ Random Forest                  Acc=0.9474  Prec=0.9455  Rec=0.9720  F1=0.9585  AUC=0.9927  CV=0.9672±0.0281
+2026-06-08 18:34:42 | INFO     | src.models.evaluator |   Evaluating  kNN …
+2026-06-08 18:34:44 | INFO     | src.models.evaluator |   ✔ kNN                            Acc=0.9591  Prec=0.9386  Rec=1.0000  F1=0.9683  AUC=0.9827  CV=0.9673±0.0278
+2026-06-08 18:34:44 | INFO     | src.models.evaluator |   Evaluating  Naive Bayes …
+2026-06-08 18:34:44 | INFO     | src.models.evaluator |   ✔ Naive Bayes                    Acc=0.9357  Prec=0.9364  Rec=0.9626  F1=0.9493  AUC=0.9892  CV=0.9321±0.0341
+2026-06-08 18:34:44 | INFO     | src.models.evaluator |   Evaluating  SVM …
+2026-06-08 18:34:44 | INFO     | src.models.evaluator |   ✔ SVM                            Acc=0.9766  Prec=0.9813  Rec=0.9813  F1=0.9813  AUC=0.9978  CV=0.9672±0.0254
+2026-06-08 18:34:44 | INFO     | src.models.evaluator |   Evaluating  Logistic Regression …
+2026-06-08 18:34:44 | INFO     | src.models.evaluator |   ✔ Logistic Regression            Acc=0.9708  Prec=0.9904  Rec=0.9626  F1=0.9763  AUC=0.9981  CV=0.9697±0.0247
+2026-06-08 18:34:44 | INFO     | src.models.evaluator |   Evaluating  Ensemble (Soft Voting) …
+2026-06-08 18:34:45 | INFO     | src.models.evaluator |   ✔ Ensemble (Soft Voting)         Acc=0.9591  Prec=0.9464  Rec=0.9907  F1=0.9680  AUC=0.9965  CV=0.9673±0.0300
+2026-06-08 18:34:45 | INFO     | src.models.evaluator | ────────────────────────────────────────────────────────────
+2026-06-08 18:34:45 | INFO     | src.models.evaluator |   🏆 Best Accuracy : SVM  (0.9766)
+2026-06-08 18:34:45 | INFO     | src.models.evaluator |   🎯 Best Recall   : kNN  (1.0000)
+2026-06-08 18:34:45 | INFO     | src.models.evaluator | ────────────────────────────────────────────────────────────
+2026-06-08 18:34:45 | INFO     | train | 
+                        accuracy  precision  recall  f1_score  auc_roc
+model_name                                                            
+kNN                       0.9591     0.9386  1.0000    0.9683   0.9827
+Ensemble (Soft Voting)    0.9591     0.9464  0.9907    0.9680   0.9965
+SVM                       0.9766     0.9813  0.9813    0.9813   0.9978
+Random Forest             0.9474     0.9455  0.9720    0.9585   0.9927
+Naive Bayes               0.9357     0.9364  0.9626    0.9493   0.9892
+Logistic Regression       0.9708     0.9904  0.9626    0.9763   0.9981
+2026-06-08 18:34:45 | INFO     | src.models.registry | Saving 6 models → models\saved
+2026-06-08 18:34:45 | INFO     | src.models.registry |   ✔ random_forest.pkl                              56.8 KB
+2026-06-08 18:34:45 | INFO     | src.models.registry |   ✔ knn.pkl                                        89.5 KB
+2026-06-08 18:34:45 | INFO     | src.models.registry |   ✔ naive_bayes.pkl                                2.7 KB
+2026-06-08 18:34:45 | INFO     | src.models.registry |   ✔ svm.pkl                                        23.4 KB
+2026-06-08 18:34:45 | INFO     | src.models.registry |   ✔ logistic_regression.pkl                        2.1 KB
+2026-06-08 18:34:46 | INFO     | src.models.registry |   ✔ ensemble_soft_voting.pkl                       334.5 KB
+2026-06-08 18:34:46 | INFO     | src.models.registry |   ✔ manifest.json written
+2026-06-08 18:34:47 | INFO     | train | Plots saved → models\plots/
+2026-06-08 18:34:47 | INFO     | train | ╔══════════════════════════════════════════════════════╗
+2026-06-08 18:34:47 | INFO     | train | ║  🏆 Best Recall  → kNN                               ║
+2026-06-08 18:34:47 | INFO     | train | ║     Recall = 1.0000   Accuracy = 0.9591                      ║
+2026-06-08 18:34:47 | INFO     | train | ╚══════════════════════════════════════════════════════╝
+2026-06-08 18:34:47 | INFO     | train | Training complete.  Start the API with:
+2026-06-08 18:34:47 | INFO     | train |   uvicorn src.api.main:app --reload --port 8000
+2026-06-08 18:35:03 | INFO     | src.api.main | =======================================================
+2026-06-08 18:35:03 | INFO     | src.api.main |   BreastCancerML v1.0.0  [development]
+2026-06-08 18:35:03 | INFO     | src.api.main | =======================================================
+2026-06-08 18:35:03 | INFO     | src.api.main |   ✔ 6 trained models found in models\saved
+2026-06-08 18:52:17 | INFO     | src.models.registry | Model loaded ← ensemble_soft_voting.pkl
+2026-06-08 18:52:19 | INFO     | src.api.routes | Predict → Malignant  conf=0.990  model=ensemble_soft_voting
+2026-06-08 18:53:17 | INFO     | src.api.main | Shutting down …

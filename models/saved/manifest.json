@@ -1,0 +1,158 @@
+{
+  "random_forest": {
+    "slug": "random_forest",
+    "path": "models\\saved\\random_forest.pkl",
+    "size_kb": 56.8,
+    "saved_at": "2026-06-08T13:04:45.973467+00:00",
+    "metrics": {
+      "model_name": "Random Forest",
+      "accuracy": 0.9474,
+      "precision": 0.9455,
+      "recall": 0.972,
+      "f1_score": 0.9585,
+      "auc_roc": 0.9927,
+      "cv_mean": 0.9672,
+      "cv_std": 0.0281,
+      "confusion_matrix": [
+        [
+          58,
+          6
+        ],
+        [
+          3,
+          104
+        ]
+      ]
+    }
+  },
+  "knn": {
+    "slug": "knn",
+    "path": "models\\saved\\knn.pkl",
+    "size_kb": 89.5,
+    "saved_at": "2026-06-08T13:04:45.978863+00:00",
+    "metrics": {
+      "model_name": "kNN",
+      "accuracy": 0.9591,
+      "precision": 0.9386,
+      "recall": 1.0,
+      "f1_score": 0.9683,
+      "auc_roc": 0.9827,
+      "cv_mean": 0.9673,
+      "cv_std": 0.0278,
+      "confusion_matrix": [
+        [
+          57,
+          7
+        ],
+        [
+          0,
+          107
+        ]
+      ]
+    }
+  },
+  "naive_bayes": {
+    "slug": "naive_bayes",
+    "path": "models\\saved\\naive_bayes.pkl",
+    "size_kb": 2.7,
+    "saved_at": "2026-06-08T13:04:45.979953+00:00",
+    "metrics": {
+      "model_name": "Naive Bayes",
+      "accuracy": 0.9357,
+      "precision": 0.9364,
+      "recall": 0.9626,
+      "f1_score": 0.9493,
+      "auc_roc": 0.9892,
+      "cv_mean": 0.9321,
+      "cv_std": 0.0341,
+      "confusion_matrix": [
+        [
+          57,
+          7
+        ],
+        [
+          4,
+          103
+        ]
+      ]
+    }
+  },
+  "svm": {
+    "slug": "svm",
+    "path": "models\\saved\\svm.pkl",
+    "size_kb": 23.4,
+    "saved_at": "2026-06-08T13:04:45.983449+00:00",
+    "metrics": {
+      "model_name": "SVM",
+      "accuracy": 0.9766,
+      "precision": 0.9813,
+      "recall": 0.9813,
+      "f1_score": 0.9813,
+      "auc_roc": 0.9978,
+      "cv_mean": 0.9672,
+      "cv_std": 0.0254,
+      "confusion_matrix": [
+        [
+          62,
+          2
+        ],
+        [
+          2,
+          105
+        ]
+      ]
+    }
+  },
+  "logistic_regression": {
+    "slug": "logistic_regression",
+    "path": "models\\saved\\logistic_regression.pkl",
+    "size_kb": 2.1,
+    "saved_at": "2026-06-08T13:04:45.984549+00:00",
+    "metrics": {
+      "model_name": "Logistic Regression",
+      "accuracy": 0.9708,
+      "precision": 0.9904,
+      "recall": 0.9626,
+      "f1_score": 0.9763,
+      "auc_roc": 0.9981,
+      "cv_mean": 0.9697,
+      "cv_std": 0.0247,
+      "confusion_matrix": [
+        [
+          63,
+          1
+        ],
+        [
+          4,
+          103
+        ]
+      ]
+    }
+  },
+  "ensemble_soft_voting": {
+    "slug": "ensemble_soft_voting",
+    "path": "models\\saved\\ensemble_soft_voting.pkl",
+    "size_kb": 334.5,
+    "saved_at": "2026-06-08T13:04:46.028727+00:00",
+    "metrics": {
+      "model_name": "Ensemble (Soft Voting)",
+      "accuracy": 0.9591,
+      "precision": 0.9464,
+      "recall": 0.9907,
+      "f1_score": 0.968,
+      "auc_roc": 0.9965,
+      "cv_mean": 0.9673,
+      "cv_std": 0.03,
+      "confusion_matrix": [
+        [
+          58,
+          6
+        ],
+        [
+          1,
+          106
+        ]
+      ]
+    }
+  }
+}

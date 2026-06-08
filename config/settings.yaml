@@ -1,0 +1,61 @@
+# ── config/settings.yaml 
+# Central hyperparameter & path configuration
+# Override any value via environment variables or .env
+
+app:
+  name: BreastCancerML
+  version: "1.0.0"
+  description: "Production ML pipeline for breast cancer prediction"
+
+data:
+  source: sklearn          # sklearn | csv | url
+  csv_path: data/wdbc.csv  # used only when source=csv
+  test_size: 0.3           # 171/569 ≈ 0.30  (paper split)
+  random_state: 42
+  cv_folds: 10             # 10-fold CV as per paper
+
+models:
+  save_dir: models/saved
+  default: ensemble_soft_voting
+  compress_level: 3        # joblib compress 0-9
+
+  random_forest:
+    n_estimators: 72       # paper value
+    max_features: sqrt
+    class_weight: balanced
+    random_state: 42
+
+  knn:
+    n_neighbors: 5
+    metric: euclidean
+    weights: uniform
+
+  naive_bayes: {}          # GaussianNB – no hyperparams needed
+
+  svm:
+    kernel: rbf
+    C: 1.0
+    probability: true
+    random_state: 42
+
+  logistic_regression:
+    max_iter: 10000
+    C: 1.0
+    solver: lbfgs
+    class_weight: balanced
+    random_state: 42
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  workers: 1
+  reload: true
+  cors_origins:
+    - "*"
+
+logging:
+  level: INFO
+  format: "%(asctime)s | %(levelname)-8s | %(name)s | %(message)s"
+  file: logs/app.log
+  max_bytes: 10485760      # 10 MB
+  backup_count: 5
