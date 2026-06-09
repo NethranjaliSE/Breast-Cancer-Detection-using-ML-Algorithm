@@ -58,7 +58,7 @@ This implementation **extends the paper** by adding SVM, Logistic Regression, an
 
 ### Confusion Matrices
 
-![Confusion Matrices]((https://github.com/NethranjaliSE/project-images/blob/main/docs/02_confusion_matrices.png)
+![Confusion Matrices](https://github.com/NethranjaliSE/project-images/blob/main/docs/02_confusion_matrices.png)
 
 > Confusion matrices for every model. **Recall (sensitivity) is the priority metric** — a missed malignant tumour (false negative) has far greater clinical cost than a false alarm.
 
@@ -66,7 +66,7 @@ This implementation **extends the paper** by adding SVM, Logistic Regression, an
 
 ### ROC Curves
 
-![ROC Curves]((https://github.com/NethranjaliSE/project-images/blob/main/docs/03_roc_curves.png)
+![ROC Curves](https://github.com/NethranjaliSE/project-images/blob/main/docs/03_roc_curves.png)
 
 > ROC curves with AUC scores. The Ensemble and SVM both achieve AUC ≥ 0.997.
 
@@ -74,7 +74,7 @@ This implementation **extends the paper** by adding SVM, Logistic Regression, an
 
 ### Model Summary Heatmap
 
-![Summary Heatmap]((https://github.com/NethranjaliSE/project-images/blob/main/docs/04_summary_heatmap.png)
+![Summary Heatmap](https://github.com/NethranjaliSE/project-images/blob/main/docs/04_summary_heatmap.png)
 
 > Side-by-side heatmap of all metrics across all models — darker = better.
 
