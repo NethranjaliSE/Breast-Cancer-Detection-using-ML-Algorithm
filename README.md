@@ -29,11 +29,7 @@ Random Forest · kNN · Naive Bayes · SVM · Logistic Regression.
 
 | Resource | Link |
 |---|---|
-| 🤗 **Hugging Face Space** | [https://huggingface.co/spaces/YOUR_USERNAME/breast-cancer-ml](https://huggingface.co/spaces/YOUR_USERNAME/breast-cancer-ml) |
-| 📓 **Kaggle Notebook** | [https://www.kaggle.com/YOUR_USERNAME/breast-cancer-ensemble-ml](https://www.kaggle.com/YOUR_USERNAME/breast-cancer-ensemble-ml) |
-| 📖 **API Docs (Swagger)** | [https://YOUR_USERNAME-breast-cancer-ml.hf.space/docs](https://YOUR_USERNAME-breast-cancer-ml.hf.space/docs) |
-
-> ⚠️ Replace `YOUR_USERNAME` with your actual Hugging Face / Kaggle username after deployment.
+| 🤗 **Hugging Face Space** | [https://huggingface.co/spaces/NethranjaliSE/breast-cancer-detector](https://huggingface.co/spaces/NethranjaliSE/breast-cancer-detector) |
 
 ---
 
@@ -54,7 +50,7 @@ This implementation **extends the paper** by adding SVM, Logistic Regression, an
 
 ### Performance Metrics
 
-![Performance Metrics](docs/images/01_performance_metrics.png)
+![Performance Metrics](https://github.com/NethranjaliSE/project-images/blob/main/docs/01_performance_metrics.png)
 
 > Bar chart comparing Accuracy, Precision, Recall, F1-Score, and AUC-ROC across all 6 models.
 
@@ -62,7 +58,7 @@ This implementation **extends the paper** by adding SVM, Logistic Regression, an
 
 ### Confusion Matrices
 
-![Confusion Matrices](docs/images/02_confusion_matrices.png)
+![Confusion Matrices]((https://github.com/NethranjaliSE/project-images/blob/main/docs/02_confusion_matrices.png)
 
 > Confusion matrices for every model. **Recall (sensitivity) is the priority metric** — a missed malignant tumour (false negative) has far greater clinical cost than a false alarm.
 
@@ -70,7 +66,7 @@ This implementation **extends the paper** by adding SVM, Logistic Regression, an
 
 ### ROC Curves
 
-![ROC Curves](docs/images/03_roc_curves.png)
+![ROC Curves]((https://github.com/NethranjaliSE/project-images/blob/main/docs/03_roc_curves.png)
 
 > ROC curves with AUC scores. The Ensemble and SVM both achieve AUC ≥ 0.997.
 
@@ -78,7 +74,7 @@ This implementation **extends the paper** by adding SVM, Logistic Regression, an
 
 ### Model Summary Heatmap
 
-![Summary Heatmap](docs/images/04_summary_heatmap.png)
+![Summary Heatmap]((https://github.com/NethranjaliSE/project-images/blob/main/docs/04_summary_heatmap.png)
 
 > Side-by-side heatmap of all metrics across all models — darker = better.
 
@@ -122,8 +118,8 @@ This implementation **extends the paper** by adding SVM, Logistic Regression, an
 ### 1. Clone & Install
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/breast-cancer-ml.git
-cd breast-cancer-ml
+git clone https://github.com/NethranjaliSE/Breast-Cancer-Detection-using-ML-Algorithm.git
+cd Breast-Cancer-Detection-using-ML-Algorithm
 pip install -r requirements.txt
 ```
 
@@ -321,7 +317,7 @@ Wisconsin Breast Cancer Dataset (569 samples, 30 features)
 
 | Property | Value |
 |---|---|
-| Source | [UCI ML Repository](https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)) |
+| Source | [Kaggle Dataset](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data) |
 | Samples | 569 |
 | Features | 30 numeric (cell nucleus measurements) |
 | Classes | Benign (357) · Malignant (212) |
@@ -422,32 +418,6 @@ git push hf main
 
 This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
 
----
-
-## 📚 Citation
-
-If you use this project in research, please cite the original paper:
-
-```bibtex
-@inproceedings{ctems2018breastcancer,
-  title     = {Comparison of Machine Learning Algorithms for Breast Cancer Prediction},
-  booktitle = {2018 International Conference on Computational Techniques,
-               Electronics and Mechanical Systems (CTEMS)},
-  year      = {2018},
-  publisher = {IEEE},
-  pages     = {114--118},
-  isbn      = {978-1-5386-7709-4}
-}
-```
-
----
-
-## 🙏 Acknowledgements
-
-- [UCI Machine Learning Repository](https://archive.ics.uci.edu) — WDBC dataset
-- [scikit-learn](https://scikit-learn.org) — ML algorithms
-- [FastAPI](https://fastapi.tiangolo.com) — API framework
-- Original paper authors — UPES & Amity University
 
 ---
 
